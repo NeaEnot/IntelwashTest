@@ -8,8 +8,7 @@ namespace Core.Models
     {
         [Key]
         public int Id { get; set; }
-        public DateTime Date { get; set; }
-        public DateTime Time { get; set; }
+        public DateTime DateTime { get; set; }
         public int SalesPointId { get; set; }
         public int? BuyerId { get; set; }
         public List<SaleData> SalesData { get; set; }

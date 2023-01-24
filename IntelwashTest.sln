@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{42653ABE-21BA-4124-98F2-CF01EF10A012}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{42653ABE-21BA-4124-98F2-CF01EF10A012}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrudApi", "CrudApi\CrudApi.csproj", "{F29FF786-AEFE-48CB-A81D-99632AE81C68}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrudApi", "CrudApi\CrudApi.csproj", "{F29FF786-AEFE-48CB-A81D-99632AE81C68}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SaleApi", "SaleApi\SaleApi.csproj", "{C7CD36D7-A571-40D7-8CE4-29C3D223275F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{F29FF786-AEFE-48CB-A81D-99632AE81C68}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F29FF786-AEFE-48CB-A81D-99632AE81C68}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F29FF786-AEFE-48CB-A81D-99632AE81C68}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C7CD36D7-A571-40D7-8CE4-29C3D223275F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C7CD36D7-A571-40D7-8CE4-29C3D223275F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C7CD36D7-A571-40D7-8CE4-29C3D223275F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C7CD36D7-A571-40D7-8CE4-29C3D223275F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Net;
 using System;
 using System.Linq;
+using Microsoft.Extensions.Logging;
 
 namespace CrudApi.Controllers
 {
@@ -13,15 +14,18 @@ namespace CrudApi.Controllers
     public class SaleController : Controller
     {
         private readonly MemoryContext _dbContext;
+        private readonly ILogger _logger;
 
-        public SaleController(MemoryContext dbContext)
+        public SaleController(MemoryContext dbContext, ILogger<SaleController> logger)
         {
             _dbContext = dbContext;
+            _logger = logger;
         }
 
         [HttpPost]
         public void Create(Sale model)
         {
+            _logger.Log(LogLevel.Information, "Create Sale");
             _dbContext.Sales.Add(model);
             _dbContext.SaveChanges();
         }
@@ -30,6 +34,7 @@ namespace CrudApi.Controllers
         [Route("{id:int}")]
         public Sale Read(int id)
         {
+            _logger.Log(LogLevel.Information, "Read Sale");
             Sale model = _dbContext.Sales.FirstOrDefault(req => req.Id == id);
 
             return model;
@@ -38,12 +43,14 @@ namespace CrudApi.Controllers
         [HttpGet]
         public IEnumerable<Sale> Read()
         {
+            _logger.Log(LogLevel.Information, "Read Sales");
             return _dbContext.Sales.ToArray();
         }
 
         [HttpPut]
         public void Update(Sale model)
         {
+            _logger.Log(LogLevel.Information, "Update Sale");
             Sale sale = _dbContext.Sales.FirstOrDefault(req => req.Id == model.Id);
 
             if (sale == null)
@@ -51,8 +58,7 @@ namespace CrudApi.Controllers
 
             sale.SalesData = model.SalesData;
             sale.SalesPointId = model.SalesPointId;
-            sale.Time = model.Time;
-            sale.Date = model.Date;
+            sale.DateTime = model.DateTime;
             sale.BuyerId = model.BuyerId;
             sale.TotalAmount= model.TotalAmount;
 
@@ -62,6 +68,7 @@ namespace CrudApi.Controllers
         [HttpDelete]
         public void Delete(int id)
         {
+            _logger.Log(LogLevel.Information, "Delete Sale");
             Sale sale = _dbContext.Sales.FirstOrDefault(req => req.Id == id);
 
             if (sale == null)

@@ -9,7 +9,7 @@ using Microsoft.OpenApi.Models;
 using System;
 using System.Linq;
 
-namespace CrudApi
+namespace SaleApi
 {
     public class Startup
     {
@@ -47,7 +47,7 @@ namespace CrudApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(name: "/Sale", pattern: "{controller=Sale}/{action=Sale}/{model}");
             });
         }
     }
